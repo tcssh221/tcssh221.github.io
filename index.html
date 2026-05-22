@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>台中二中數資班專題成表</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&family=Space+Mono:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<section class="hero">
+  <h2 style="color: var(--accent);">ＴＡＩＣＨＵＮＧ　ＳＥＣＯＮＤ　ＳＥＮＩＯＲ　ＨＩＧＨ　ＳＣＨＯＯＬ&nbsp;</h2>
+  <h1 class="hero-title">
+    台中二中<br>
+    數理資優班專題成果發表
+  </h1>
+  <p class="hero-eyebrow">&nbsp;全台首映 現正熱映中&nbsp;</p>
+</section>
+
+<section class="schedule-section">
+  <div class="schedule-board">
+    <h2 class="schedule-title">PREMIERE SCHEDULE   時刻表</h2>
+    <div id="scheduleContainer"></div>
+  </div>
+</section>
+
+<h2 class="section-label">NOW SHOWING   正片預告</h2>
+
+<div class="movie-grid" id="movieGrid"></div>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal()">✕</button>
+    <div class="modal-header">
+      <p id="mCategory" style="font-family: 'Space Mono'; font-size: 0.8rem;"></p>
+      <h2 id="mTitle" style="font-family: 'Noto Serif TC';"></h2>
+    </div>
+    <div class="modal-body" id="mBody"></div>
+  </div>
+</div>
+
+<script>
+let DATA = null;
+
+// 從 data.json 加載數據
+async function loadData() {
+  try {
+    const response = await fetch('data.json');
+    DATA = await response.json();
+    renderSchedule();
+    renderThemes();
+  } catch (error) {
+    console.error('無法加載 data.json:', error);
+    alert('無法加載數據文件。請確保 data.json 與 index.html 在同一目錄。');
+  }
+}
+
+// 渲染時刻表 (已修正原先的 mclass 錯字 Bug)
+function renderSchedule() {
+  const schContainer = document.getElementById('scheduleContainer');
+  schContainer.innerHTML = '';
+  DATA.schedule.forEach(item => {
+    schContainer.innerHTML += `
+      <div class="schedule-item">
+        <div class="time">${item.time}</div>
+        <div class="event">${item.event}</div>
+        <div class="status">${item.status}</div>
+      </div>
+    `;
+  });
+}
+
+// 渲染主題海報
+function renderThemes() {
+  const movieGrid = document.getElementById('movieGrid');
+  movieGrid.innerHTML = '';
+  DATA.themes.forEach(theme => {
+    movieGrid.innerHTML += `
+      <div class="poster-card" onclick="openModal(${theme.id})">
+        <div class="poster-img">${theme.icon}</div>
+        <div class="poster-info">
+          <p style="color:var(--muted); font-family:'Space Mono'; font-size:0.7rem">${theme.category}</p>
+          <h3 class="poster-title">${theme.title}</h3>
+          <p style="color:var(--accent); font-size:0.8rem">詳情請點擊 →</p>
+        </div>
+      </div>
+    `;
+  });
+}
+
+// 打開模態框
+function openModal(id, subThemeId = null) {
+  const theme = DATA.themes.find(t => t.id === id);
+  const mBody = document.getElementById('mBody');
+
+  const renderContent = () => {
+    if (subThemeId !== null) {
+      const subTheme = theme.subThemes.find(s => s.id === subThemeId);
+      document.getElementById('mCategory').innerText = theme.category;
+      
+      // ✨ 修正 1：讓紅色的上方標題欄維持大主題名稱，結構就會跟第一頁完全一致
+      document.getElementById('mTitle').innerText = theme.title; 
+
+      let imageGalleryHTML = '';
+      if (subTheme.images && subTheme.images.length > 0) {
+        imageGalleryHTML = `
+          <div class="image-gallery">
+            ${subTheme.images.map(img => `
+              <div class="gallery-item">
+                <img src="${img}" alt="圖片" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>📷</div>'">
+              </div>
+            `).join('')}
+          </div>
+        `;
+      }
+
+      let highlightsHTML = '';
+      if (subTheme.highlights && subTheme.highlights.length > 0) {
+        highlightsHTML = `
+          <div class="highlights-section">
+            <div class="highlights-title">✨ 研究亮點</div>
+            <div class="highlights-list">
+              ${subTheme.highlights.map(h => `<div class="highlight-badge">${h}</div>`).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      mBody.innerHTML = `
+        <div class="sub-detail-container">
+          <div class="sub-detail-header">
+            <p class="back-link" onclick="openModal(${theme.id})">← 返回主題列表</p>
+            <h2 class="sub-detail-title">${subTheme.title}</h2>
+            <div class="sub-detail-meta">
+              <span>👤 研究員：${subTheme.author}</span>
+              <span>📂 分類：${theme.title}</span>
+            </div>
+          </div>
+          ${imageGalleryHTML}
+          <div class="detail-description">${subTheme.description}</div>
+          ${highlightsHTML}
+        </div>
+      `;
+    } else {
+      document.getElementById('mCategory').innerText = theme.category;
+      document.getElementById('mTitle').innerText = theme.title;
+      mBody.innerHTML = theme.subThemes.map(sub => `
+        <div class="sub-theme-card" onclick="openModal(${theme.id}, '${sub.id}')">
+          <h3 class="sub-theme-card-title">${sub.title}</h3>
+          <p class="sub-theme-card-author">研究員：${sub.author}</p>
+          <p class="sub-theme-card-desc">${sub.shortDesc}</p>
+          <p style="color: var(--accent); font-size: 0.75rem; margin-top: 0.8rem;">點擊查看詳細 →</p>
+        </div>
+      `).join('');
+    }
+
+    // fade back in
+    requestAnimationFrame(() => {
+      mBody.style.opacity = '1';
+      mBody.style.transform = 'translateY(0)';
+    });
+  };
+
+  const isAlreadyOpen = document.getElementById('modalOverlay').style.display === 'flex';
+
+  if (isAlreadyOpen) {
+    const modal = document.querySelector('.modal-content');
+    
+    // ✨ 修正 2：新增手機版判定
+    // 手機版直接流暢切換內容，不執行高度動畫，徹底防止與 CSS max-height 衝突導致的爆框
+    if (window.innerWidth <= 600) {
+      mBody.style.opacity = '0';
+      mBody.style.transform = 'translateY(8px)';
+      setTimeout(() => {
+        renderContent();
+        modal.style.height = ''; // 確保清除任何殘留的固定高度
+      }, 400);
+      return;
+    }
+
+    // 桌機版則維持原有的精美動態長高動畫
+    modal.style.height = modal.offsetHeight + 'px';
+    mBody.style.opacity = '0';
+    mBody.style.transform = 'translateY(8px)';
+    setTimeout(() => {
+      renderContent();
+      requestAnimationFrame(() => {
+        modal.style.height = modal.scrollHeight + 'px';
+        setTimeout(() => modal.style.height = '', 300);
+      });
+    }, 400);
+  } else {
+    mBody.style.opacity = '1';
+    mBody.style.transform = 'translateY(0)';
+    renderContent();
+    document.getElementById('modalOverlay').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+// 關閉模態框
+function closeModal() {
+  document.getElementById('modalOverlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+// 點擊背景關閉
+window.onclick = function(event) {
+  if (event.target == document.getElementById('modalOverlay')) closeModal();
+}
+
+// 頁面加載時載入數據
+window.addEventListener('DOMContentLoaded', loadData);
+</script>
+
+</body>
+</html>

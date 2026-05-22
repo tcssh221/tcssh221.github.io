@@ -1,0 +1,490 @@
+:root {
+  --bg: #050505;
+  --surface: #121212;
+  --border: rgba(255, 215, 0, 0.2);
+  --text: #ffffff;
+  --accent: #ffd700; /* 金色 */
+  --accent-red: #b30000; /* 戲院紅 */
+  --muted: #888888;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Space Mono', 'Noto Serif TC', "Microsoft JhengHei", serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ──底片邊緣特效── */
+body::before, body::after {
+  content: '';
+  position: fixed;
+  top: 0; bottom: 0;
+  width: 20px;
+  background-image: radial-gradient(circle, #222 5px, transparent 5px);
+  background-size: 20px 40px;
+  z-index: 1000;
+  opacity: 0.3;
+}
+body::before { left: 0; }
+body::after { right: 0; }
+
+/* ── HERO ── */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&q=80&w=2070') center/cover;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-eyebrow {
+  font-family: 'Microsoft JhengHei', 'Songti TC', 'serif';
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: var(--accent);
+  letter-spacing: 0.3em;
+  animation: breatheGlow 3s ease-in-out infinite;
+  display: inline-block;
+}	
+
+@keyframes breatheGlow {
+  0%, 100% {
+    opacity: 0.5;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 10px var(--accent), 
+                 0 0 20px var(--accent), 
+                 0 0 30px #fff;
+    transform: scale(1.02);
+  }
+}
+
+.hero-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+/* ── 時刻表 SCHEDULE ── */
+.schedule-section {
+  padding: 4rem 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.schedule-board {
+  background: #111;
+  border: 4px solid #333;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.schedule-title {
+  font-family: 'Space Mono', monospace;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 1rem;
+}
+
+.schedule-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px dashed #222;
+}
+
+.time { font-family: 'Space Mono', monospace; color: var(--accent); font-weight: bold; }
+.event { font-weight: 500; }
+.status { font-size: 0.8rem; text-align: right; color: var(--muted); text-transform: uppercase; }
+
+/* ── 大主題卡片 GRID ── */
+.section-label {
+  text-align: center;
+  margin: 2rem 0 2rem;
+  font-family: 'Noto Serif TC', serif;
+  font-size: 2.5rem;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.poster-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.4s, box-shadow 0.4s;
+  overflow: hidden;
+}
+
+.poster-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.1);
+}
+
+.poster-img {
+  height: 400px;
+  width: 100%;
+  background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+
+.poster-info {
+  padding: 1.5rem;
+  border-top: 5px solid var(--accent-red);
+}
+
+.poster-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ── 彈窗 MODAL ── */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: #1a1a1a;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  border: 1px solid var(--accent);
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-header {
+  padding: 2rem;
+  background: var(--accent-red);
+  color: white;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-body { 
+  padding: 2rem;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── 小主題卡片樣式 ── */
+.sub-theme-card {
+  background: rgba(255,255,255,0.05);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sub-theme-card:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateX(5px);
+  box-shadow: 0 5px 20px rgba(255, 215, 0, 0.1);
+}
+
+.sub-theme-card-title { 
+  color: var(--accent); 
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.sub-theme-card-author {
+  font-size: 0.8rem; 
+  color: var(--accent); 
+  margin-bottom: 0.5rem;
+}
+
+.sub-theme-card-desc {
+  font-size: 0.9rem; 
+  color: #ccc; 
+  line-height: 1.6;
+}
+
+/* ── 詳細內容樣式 ── */
+.sub-detail-container {
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-body.transitioning {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-body {
+  padding: 2rem;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.sub-detail-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.back-link {
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.sub-detail-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.sub-detail-meta {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.sub-detail-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ── 圖片展示 ── */
+.image-gallery {
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.05);
+  aspect-ratio: 4/3;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--muted);
+  background: rgba(255,255,255,0.03);
+}
+
+/* ── 詳細描述 ── */
+.detail-description {
+  background: rgba(255,255,255,0.03);
+  padding: 1.5rem;
+  border-radius: 4px;
+  margin: 1.5rem 0;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+/* ── 亮點標籤 ── */
+.highlights-section {
+  margin: 2rem 0;
+}
+
+.highlights-title {
+  font-size: 0.95rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.highlights-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.highlight-badge {
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid var(--accent);
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+.close-btn {
+  position: absolute; top: 1rem; right: 1rem;
+  background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;
+}
+
+/* ── 手機與行動裝置版優化 (600px 以下響應式設計) ── */
+@media (max-width: 600px) {
+  .schedule-section {
+    padding: 4rem 2rem;
+  }
+  
+  .schedule-board {
+    padding: 1.4rem;
+  }
+
+  
+  .schedule-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 0.6rem 0;
+    
+    border-bottom: 1px dashed #222;
+  }
+
+  .section-label {
+  text-align: center;
+  margin: 4rem 0 2rem;
+  padding: 1rem;
+  font-family: 'Noto Serif TC', serif;
+  font-size: 2.5rem;
+}
+
+  
+  body::before, body::after { display: none; }
+
+  .hero {
+    padding: 0.3rem;
+    font-size: 1.3rem;
+    padding-bottom: 20vh; 
+  }
+
+  .hero h2 {
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    word-break: keep-all;
+    font-weight: 900;
+  }
+
+
+  
+  .hero-title { 
+    font-size: 2rem;
+    margin: 2rem 0;
+  }
+  
+  .hero-eyebrow {
+    font-size: 1.4rem;
+  }
+
+  .movie-grid { 
+    grid-template-columns: 1fr; 
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+  
+  .poster-card {
+    max-width: 100%;
+  }
+  
+  .poster-img {
+    height: 300px;
+  }
+  
+  .modal-content {
+    background: #1a1a1a;
+    width: 100%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    border: 1px solid var(--accent);
+    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    /* ✨ 修正：拿掉原本隱藏在這裡的 transition: height 0.3s ease; */
+    /* 這樣一來，外框在手機上就會像第一頁一樣穩固，內容長度超出時會乖乖在內部觸發滾動條 */
+  }
+  
+  .modal-header, .modal-body {
+    padding: 1.4rem;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .sub-detail-title {
+    font-size: 1.4rem;
+  }
+  
+  .sub-theme-card:hover {
+    transform: translateX(0) scale(1.03); /* 改為原地微幅放大，不往右突出去 */
+    background: rgba(255,255,255,0.1);
+  }
+
+  .sub-detail-meta { 
+    flex-direction: column; 
+    gap: 0.5rem; 
+  }
+  
+  .image-gallery { 
+    grid-template-columns: 1fr; 
+  }
+  
+  .highlights-list {
+    grid-template-columns: 1fr;
+  }
+}
