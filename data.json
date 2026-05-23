@@ -128,12 +128,58 @@
       "icon": "🧠",
       "category": "BIOLOGY",
       "subThemes": [
+        
         {
           "id": "4-1",
-          "title": "夢境紀錄與壓力分析",
-          "author": "周星星",
-          "shortDesc": "透過長達三個月的夢境紀錄觀察考前壓力變化。",
-          "description": "我進行了為期 3 個月的夢境紀錄實驗，從高一到考前。記錄了 90 個夢境，分析夢境中的情緒色彩、出現的符號等。發現隨著考試臨近，負面情緒的夢境比例從 20% 增加到 65%。",
+          "title": "探討代謝重新編程參與乳癌產生抗藥性之角色",
+          "author": "黃靖容 張茈宸",
+          "shortDesc": "short description",
+          "description": "本研究探討脂質代謝在乳癌抗藥性細胞中的角色。我們利用 Nanolive 即時影像系統觀察細胞型態變化，並透過抑制脂肪酸延長酶 (ELOVL6) 分析脂質代謝對細胞代謝調控的影響。結果顯示ADC抗藥性細胞內油滴數量出現變化，且抑制 ELOVL6 後粒線體相關蛋白轉譯後修飾發生變化，但細胞存活實驗顯示 ELOVL6 並非維持細胞生存的關鍵蛋白。此外，我們的結果顯示，在正常葡萄糖環境下細胞仍主要利用葡萄糖作為能量來源。",
+          "images": [
+            "images/psychology-dream-1.jpg",
+            "images/psychology-dream-2.jpg"
+          ],
+          "highlights": [
+            "90 個夢境記錄",
+            "3 個月追蹤期",
+            "負面夢境增至 65%"
+          ]
+        },{
+          "id": "4-2",
+          "title": "超音波對阿拉伯芥癒傷組織再生能力之影響",
+          "author": "陳育寧 游紫薰",
+          "shortDesc": "short description",
+          "description": "隨著科技與工業發展，生活中的環境總是能感受到機械運作所產生的聲學污染，但我們極少關注聽不到的超音波在液體環境中如何影響生物。本研究以阿拉伯芥癒傷組織（Callus）為實驗材料 ，探討在介質中，人為超音波產生的物理震盪和機械壓力如何影響植物細胞的再生能力。本實驗使用 Qsonica Q800R3超音波高精密儀，將癒傷組織置於液體中，在振幅最低強度 20% 及20khz之頻率下進行震盪處理，就像是讓植物細胞在水中接受不同時長的「超音波治療」。結果顯示，實驗發現超音波處理時間與細胞再生表現呈現非線性關係：適度的短時間（1秒）刺激具顯著促進作用；，而長時處理則產生抑制效果。此研究證實，精準控制的液態超音波處理可作為一種促進植物組織培養的新技術。",
+          "images": [
+            "images/psychology-dream-1.jpg",
+            "images/psychology-dream-2.jpg"
+          ],
+          "highlights": [
+            "90 個夢境記錄",
+            "3 個月追蹤期",
+            "負面夢境增至 65%"
+          ]
+        },{
+          "id": "4-3",
+          "title": "「 吾可究藥 」 中藥材鑑別之 DNA 分子技術的開發-以易混淆、誤用之種子藥材的品種判別為例",
+          "author": "張東巽",
+          "shortDesc": "short description",
+          "description": "本研究經由生物資訊分析比對 rbcL、matK、psbA-trnH 及 ITS 等多處基因片段，發現 ITS2 序列具有作為鑑別韭菜、蔥與其他混淆品之間的潛力，足以作為區分物種之遺傳標記。據此，我針對此序列區段設計了具備物種特異性的 PCR 引子組，可以特異性地擴增目標物種之特異性片段。另外為了提升檢測便利性，本實驗結合側向流體免疫層析法（LFIA），將擴增產物透過抗原抗體呈色原理進行判讀。",
+          "images": [
+            "images/psychology-dream-1.jpg",
+            "images/psychology-dream-2.jpg"
+          ],
+          "highlights": [
+            "90 個夢境記錄",
+            "3 個月追蹤期",
+            "負面夢境增至 65%"
+          ]
+        },{
+          "id": "4-4",
+          "title": "不同刺激物對跳蛛跳躍行為誘導效果之研究",
+          "author": "林奕宏 張恩誠",
+          "shortDesc": "short description",
+          "description": "本專題以跳蛛作為研究對象，探討其對不同誘因的反應以及偏好。研究中的誘因主要分成兩大類：生物性以及非生物性。生物性的包括迷你麵包蟲的幼蟲以及成蟲，而非生物性誘因則是有人工樹葉、紅色玻璃紙、藍色玻璃紙。透過觀察跳蛛對不同刺激物的跳躍反應，進一步分析其偏好及行為模式。",
           "images": [
             "images/psychology-dream-1.jpg",
             "images/psychology-dream-2.jpg"
@@ -154,10 +200,10 @@
       "subThemes": [
         {
           "id": "5-1",
-          "title": "二中校史數位典藏",
-          "author": "何大為",
-          "shortDesc": "利用 3D 建模技術保存校內老舊建物模型。",
-          "description": "使用無人機掃描技術，對校內 5 棟老舊建物進行 3D 建模。建立了高精度的數位典藏模型，使未來子弟即使建物損毀或改建，仍能透過 VR 技術回顧學校歷史。",
+          "title": "風過之處 海水低語",
+          "author": "蔡語謙 陳詠函",
+          "shortDesc": "short description",
+          "description": "本研究探討颱風對海洋表面降溫的影響，選取2019至2025年太平洋颱風，結合颱風路徑與HYCOM海溫資料，透過Python分析海溫變化。以巴威（2020）、軒嵐諾（2022）與卡努（2023）為案例，探討轉彎特性與降溫分布。結果顯示：海面降溫區多集中於颱風路徑右側；轉彎角度越小，降溫區越快集中於右側，且回溫所需時間較長；降溫區亦會隨颱風路徑移動。",
           "images": [
             "images/history-3d-1.jpg",
             "images/history-3d-2.jpg",
@@ -173,9 +219,9 @@
     },
     {
       "id": 6,
-      "title": "生活科技",
+      "title": "資訊科技",
       "icon": "🎨",
-      "category": "LIFE TECHNOLOGY",
+      "category": "INFORMATION TECHNOLOGY",
       "subThemes": [
         {
           "id": "6-1",
@@ -198,16 +244,65 @@
     },
     {
       "id": 7,
-      "title": "資訊科技",
+      "title": "靜態展",
       "icon": "🎨",
-      "category": "INFORMATION TECHNOLOGY",
+      "category": "STATIC SHOWCASE",
       "subThemes": [
         {
           "id": "7-1",
-          "title": "人工智能在教育領域的應用",
-          "author": "林小明",
-          "shortDesc": "結合數學公式與織品設計的跨領域嘗試。",
-          "description": "設計了 8 套服裝，每套都基於不同的幾何公式：費波那契螺旋、黃金比例、分形圖案等。透過 3D 縫結軟體預覽，最後手工製作了 3 套原型服裝，展示幾何美學與穿著舒適度的平衡。",
+          "title": "棒球魂與工程腦的碰撞：我的自製發球機圓夢計畫",
+          "author": "張禹謙",
+          "shortDesc": "short description",
+          "description": "身為一個棒球運動員，打擊練習時常常覺得效率不足，於是我製作了一台自動化拋球式發球機，能夠發射軟、硬式棒球。發球機分為三個部分：一.發球機主體，以高速的無刷馬達搭配橡皮輪藉由與棒球之間的摩擦力將球發射出去；二.自動化送球系統，360度伺服馬達接上轉盤運送，再加上紅外線感測控制棒球的輸送頻率並通知球員球即將送出；三.支撐結構，手工製作木頭支架將發球機主體及自動化控球系統放上並穩固。有了這台發球機，往後站在打擊區上都能夠有最好的發揮。",
+          "images": [
+            "images/arts-design-1.jpg",
+            "images/arts-design-2.jpg",
+            "images/arts-design-3.jpg"
+          ],
+          "highlights": [
+            "8 套設計方案",
+            "3 套實體原型",
+            "融合數學與美學"
+          ]
+        },
+        {
+          "id": "7-2",
+          "title": "神射手製造器-Arduino小型投籃機",
+          "author": "陳冠嘉",
+          "shortDesc": "short description",
+          "description": "透過這次專題，運用了 Arduino製作了一台小型投籃機，再配合按鈕、感測器與馬達等零件，設計出可發射兵乓球進行投籃的酷東西。在功能方面，這台投籃機可透過按鈕啟動遊戲，再利用發射器控制發射角度與力度。也結合了紅外線感測器進行進球加分的判斷！經過三個學期的製作，可以從中學到不少寶貴經驗。除了加強了我對 Arduino的運用之外，也學會了從想法設計到實踐中，排除困難及 加豊富度的能力！！！",
+          "images": [
+            "images/arts-design-1.jpg",
+            "images/arts-design-2.jpg",
+            "images/arts-design-3.jpg"
+          ],
+          "highlights": [
+            "8 套設計方案",
+            "3 套實體原型",
+            "融合數學與美學"
+          ]
+        },{
+          "id": "7-3",
+          "title": "LEGO EV3：乒乓球砲台",
+          "author": "葉任竣",
+          "shortDesc": "short description",
+          "description": "從小就很喜歡玩樂高以及瓶蓋人，國小也曾經自己做了一個手動版的瓶蓋發射器，於是就想說來做一個自動版的，但後來因為瓶蓋太小馬達無法發射，就將瓶蓋改成乒乓球，透過兩台Lego EV3主機之間的藍芽連結功能進行遙控，控制發射角度、連發數量等。由於國小時有上過樂高的程式課程，國中也有參加過樂高機器人競賽，藉由本次專題也將以前對EV3的記憶重新找回來應用，讓以前的心血不白費。",
+          "images": [
+            "images/arts-design-1.jpg",
+            "images/arts-design-2.jpg",
+            "images/arts-design-3.jpg"
+          ],
+          "highlights": [
+            "8 套設計方案",
+            "3 套實體原型",
+            "融合數學與美學"
+          ]
+        },{
+          "id": "7-4",
+          "title": "童年回憶的遊戲機台",
+          "author": "廖翊程",
+          "shortDesc": "short description",
+          "description": "由於小時候常常去湯姆熊打擊台，而且之前在網路上有看到PacMan小遊戲，於是打算結合成一個遊戲機台。遊戲主要使用 Unity 製作遊戲，內容包含角色移動、動畫控制、分數與計時系統、開始與結束畫面以及音效設計。另外機台本身是透過留切機切割木板拼湊而成，並結合 Arduino Leonardo 與搖桿控制器讓整體具有機台操作感。由於機體限制版面沒辦法跟網路上的一樣大，但是仍有闖關的遊戲感，是個消遺時間的好選擇。",
           "images": [
             "images/arts-design-1.jpg",
             "images/arts-design-2.jpg",

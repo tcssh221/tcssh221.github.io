@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>台中二中數資班專題成表</title>
+<title>台中二中數資班專題成果發表</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&family=Space+Mono:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <section class="hero">
-  <h2 style="color: var(--accent);">ＴＡＩＣＨＵＮＧ　ＳＥＣＯＮＤ　ＳＥＮＩＯＲ　ＨＩＧＨ　ＳＣＨＯＯＬ&nbsp;</h2>
+  <h2 style="color: var(--accent);">ＴＡＩＣＨＵＮＧ ＳＥＣＯＮＤ ＳＥＮＩＯＲ ＨＩＧＨ ＳＣＨＯＯＬ&nbsp;</h2>
   <h1 class="hero-title">
     台中二中<br>
     數理資優班專題成果發表
@@ -56,7 +56,7 @@ async function loadData() {
   }
 }
 
-// 渲染時刻表 (已修正原先的 mclass 錯字 Bug)
+// 渲染時刻表
 function renderSchedule() {
   const schContainer = document.getElementById('scheduleContainer');
   schContainer.innerHTML = '';
@@ -106,10 +106,9 @@ function openModal(id, subThemeId = null) {
 
   const renderContent = () => {
     if (subThemeId !== null) {
-      const subTheme = theme.subThemes.find(s => s.id === subThemeId);
+      // 相容性比對修正，防止 ID 型態不符
+      const subTheme = theme.subThemes.find(s => String(s.id) === String(subThemeId));
       document.getElementById('mCategory').innerText = theme.category;
-      
-      // ✨ 修正 1：讓紅色的上方標題欄維持大主題名稱，結構就會跟第一頁完全一致
       document.getElementById('mTitle').innerText = theme.title; 
 
       let imageGalleryHTML = '';
@@ -177,19 +176,18 @@ function openModal(id, subThemeId = null) {
   if (isAlreadyOpen) {
     const modal = document.querySelector('.modal-content');
     
-    // ✨ 修正 2：新增手機版判定
-    // 手機版直接流暢切換內容，不執行高度動畫，徹底防止與 CSS max-height 衝突導致的爆框
+    // 手機版判定（維持 600px 斷點）
     if (window.innerWidth <= 600) {
       mBody.style.opacity = '0';
       mBody.style.transform = 'translateY(8px)';
       setTimeout(() => {
         renderContent();
-        modal.style.height = ''; // 確保清除任何殘留的固定高度
+        modal.style.height = ''; 
       }, 400);
       return;
     }
 
-    // 桌機版則維持原有的精美動態長高動畫
+    // 桌機版動態長高動畫
     modal.style.height = modal.offsetHeight + 'px';
     mBody.style.opacity = '0';
     mBody.style.transform = 'translateY(8px)';
