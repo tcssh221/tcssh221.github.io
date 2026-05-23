@@ -77,7 +77,7 @@ function renderThemes() {
   movieGrid.innerHTML = '';
   DATA.themes.forEach(theme => {
     movieGrid.innerHTML += `
-      <div class="poster-card" onclick="openModal(${theme.id})">
+      <div class="poster-card" onclick="handleCardClick(event, ${theme.id})">
         <div class="poster-img">${theme.icon}</div>
         <div class="poster-info">
           <p style="color:var(--muted); font-family:'Space Mono'; font-size:0.7rem">${theme.category}</p>
@@ -87,6 +87,16 @@ function renderThemes() {
       </div>
     `;
   });
+}
+
+// 處理海報卡片點擊（加入淡出動畫後再開啟 Modal）
+function handleCardClick(event, id) {
+  const card = event.currentTarget;
+  card.classList.add('clicking');
+  setTimeout(() => {
+    openModal(id);
+    setTimeout(() => card.classList.remove('clicking'), 400);
+  }, 300);
 }
 
 // 打開模態框
@@ -162,7 +172,7 @@ function openModal(id, subThemeId = null) {
     });
   };
 
-  const isAlreadyOpen = document.getElementById('modalOverlay').style.display === 'flex';
+  const isAlreadyOpen = document.getElementById('modalOverlay').classList.contains('visible');
 
   if (isAlreadyOpen) {
     const modal = document.querySelector('.modal-content');
@@ -194,15 +204,28 @@ function openModal(id, subThemeId = null) {
     mBody.style.opacity = '1';
     mBody.style.transform = 'translateY(0)';
     renderContent();
-    document.getElementById('modalOverlay').style.display = 'flex';
+    const overlay = document.getElementById('modalOverlay');
+    const modalEl = document.querySelector('.modal-content');
+    overlay.style.display = 'flex';
     document.body.style.overflow = 'hidden';
+    setTimeout(() => {
+      overlay.classList.add('visible');
+      modalEl.classList.add('visible');
+    }, 20);
   }
 }
 
 // 關閉模態框
 function closeModal() {
-  document.getElementById('modalOverlay').style.display = 'none';
-  document.body.style.overflow = '';
+  const overlay = document.getElementById('modalOverlay');
+  const modalEl = document.querySelector('.modal-content');
+  overlay.classList.remove('visible');
+  modalEl.classList.remove('visible');
+  setTimeout(() => {
+    overlay.style.display = 'none';
+    overlay.style.opacity = '';
+    document.body.style.overflow = '';
+  }, 300);
 }
 
 // 點擊背景關閉

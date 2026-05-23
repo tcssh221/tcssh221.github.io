@@ -1,7 +1,7 @@
 :root {
   --bg: #050505;
   --surface: #121212;
-  --border: rgba(255, 215, 0, 0.2);
+  --border: rgba(255, 217, 0, 0.24);
   --text: #ffffff;
   --accent: #ffd700; /* 金色 */
   --accent-red: #b30000; /* 戲院紅 */
@@ -134,16 +134,23 @@ body::after { right: 0; }
 
 .poster-card {
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   position: relative;
   cursor: pointer;
-  transition: transform 0.4s, box-shadow 0.4s;
+  transition: transform 0.4s, box-shadow 0.4s, opacity 0.35s ease, filter 0.35s ease;
   overflow: hidden;
 }
 
 .poster-card:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 15px 40px rgba(255, 215, 0, 0.1);
+}
+
+.poster-card.clicking {
+  transform: scale(0.97) translateY(4px);
+  opacity: 0;
+  filter: brightness(2);
+  transition: transform 0.32s cubic-bezier(0.4,0,0.2,1), opacity 0.32s cubic-bezier(0.4,0,0.2,1), filter 0.32s ease;
 }
 
 .poster-img {
@@ -176,6 +183,12 @@ body::after { right: 0; }
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.visible {
+  opacity: 1;
 }
 
 .modal-content {
@@ -186,7 +199,14 @@ body::after { right: 0; }
   overflow-y: auto;
   position: relative;
   border: 1px solid var(--accent);
-  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.35s ease;
+  transform: translateY(18px) scale(0.98);
+  opacity: 0;
+}
+
+.modal-content.visible {
+  transform: translateY(0) scale(1);
+  opacity: 1;
 }
 
 .modal-header {
@@ -456,9 +476,7 @@ body::after { right: 0; }
     overflow-y: auto;
     position: relative;
     border: 1px solid var(--accent);
-    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    /* ✨ 修正：拿掉原本隱藏在這裡的 transition: height 0.3s ease; */
-    /* 這樣一來，外框在手機上就會像第一頁一樣穩固，內容長度超出時會乖乖在內部觸發滾動條 */
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.35s ease;
   }
   
   .modal-header, .modal-body {

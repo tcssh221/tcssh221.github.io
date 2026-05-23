@@ -2,9 +2,9 @@
   "themes": [
     {
       "id": 1,
-      "title": "數位邊界",
+      "title": "數學",
       "icon": "🎞️",
-      "category": "TECHNOLOGY",
+      "category": "MATHAMATICS",
       "subThemes": [
         {
           "id": "1-1",
@@ -42,9 +42,9 @@
     },
     {
       "id": 2,
-      "title": "綠色革命",
+      "title": "物理",
       "icon": "🌿",
-      "category": "ECOLOGY",
+      "category": "PHYSICS",
       "subThemes": [
         {
           "id": "2-1",
@@ -83,9 +83,9 @@
     },
     {
       "id": 3,
-      "title": "社會寓言",
+      "title": "化學",
       "icon": "⚖️",
-      "category": "SOCIETY",
+      "category": "CHEMISTRY",
       "subThemes": [
         {
           "id": "3-1",
@@ -124,9 +124,9 @@
     },
     {
       "id": 4,
-      "title": "心靈探險",
+      "title": "生物",
       "icon": "🧠",
-      "category": "PSYCHOLOGY",
+      "category": "BIOLOGY",
       "subThemes": [
         {
           "id": "4-1",
@@ -148,9 +148,9 @@
     },
     {
       "id": 5,
-      "title": "未來遺產",
+      "title": "地球科學",
       "icon": "🏺",
-      "category": "HISTORY",
+      "category": "EARTH_SCIENCE",
       "subThemes": [
         {
           "id": "5-1",
@@ -173,9 +173,9 @@
     },
     {
       "id": 6,
-      "title": "純粹美學",
+      "title": "生活科技",
       "icon": "🎨",
-      "category": "ARTS",
+      "category": "LIFE TECHNOLOGY",
       "subThemes": [
         {
           "id": "6-1",
@@ -195,25 +195,50 @@
           ]
         }
       ]
+    },
+    {
+      "id": 7,
+      "title": "資訊科技",
+      "icon": "🎨",
+      "category": "INFORMATION TECHNOLOGY",
+      "subThemes": [
+        {
+          "id": "7-1",
+          "title": "人工智能在教育領域的應用",
+          "author": "林小明",
+          "shortDesc": "結合數學公式與織品設計的跨領域嘗試。",
+          "description": "設計了 8 套服裝，每套都基於不同的幾何公式：費波那契螺旋、黃金比例、分形圖案等。透過 3D 縫結軟體預覽，最後手工製作了 3 套原型服裝，展示幾何美學與穿著舒適度的平衡。",
+          "images": [
+            "images/arts-design-1.jpg",
+            "images/arts-design-2.jpg",
+            "images/arts-design-3.jpg"
+          ],
+          "highlights": [
+            "8 套設計方案",
+            "3 套實體原型",
+            "融合數學與美學"
+          ]
+        }
+      ]
     }
   ],
   "schedule": [
-    { "time": "8:00~8:20", "event": "報到", "status": "Coming Soon" },
-    { "time": "8:20~8:30", "event": "開幕式", "status": "Live" },
-    { "time": "8:30~8:40", "event": "從橢圓加密驗算法發想的加密法 - 超橢圓加密驗算法", "status": "Upcoming" },
-    { "time": "8:40~8:50", "event": "探討代謝重新編程參與乳癌產生抗藥性之角色", "status": "Upcoming" },
-    { "time": "8:50~9:00", "event": "碳為觀止-探討氫氧化鈣在不同離子強度下和二氧化碳反應的關係", "status": "Upcoming" },
-    { "time": "9:00~9:10", "event": "不同刺激物對跳蛛跳躍行為誘導效果之研究", "status": "Upcoming" },
-    { "time": "9:10~9:20", "event": "演算物理：Blender 在物理模擬的實踐", "status": "Upcoming" },
-    { "time": "9:20~9:30", "event": "鎂的冒泡的鹽水動力車：鎂在鹽酸中的反應方程式及其應用", "status": "Upcoming" },
-    { "time": "9:30~10:10", "event": "靜態展", "status": "Upcoming" },
-    { "time": "10:10~10:30", "event": "中場休息", "status": "Upcoming" },
-    { "time": "10:30~10:40", "event": "超音波對阿拉伯芥癒傷組織再生能力之影響", "status": "Upcoming" },
-    { "time": "10:40~10:50", "event": "痕行霸道，還我清白", "status": "Upcoming" },
-    { "time": "10:50~11:00", "event": "真相浮出水面？水柱與光碟片浮沉的關係", "status": "Upcoming" },
-    { "time": "11:00~11:10", "event": "風過之處 海水低語", "status": "Upcoming" },
-    { "time": "11:10~11:20", "event": "巴斯卡三角形到巴斯卡金字塔的推廣", "status": "Upcoming" },
-    { "time": "11:20~11:30", "event": "棒球魂與工程腦的碰撞：我的自製發球機圓夢計畫", "status": "Upcoming" },
-    { "time": "11:30~11:55", "event": "閉幕式", "status": "Upcoming" }
+    { "time": "8:00~8:20", "event": "報到", "status": " " },
+    { "time": "8:20~8:30", "event": "開幕式", "status": "OPENING" },
+    { "time": "8:30~8:40", "event": "從橢圓加密驗算法發想的加密法 - 超橢圓加密驗算法", "status": "MATHAMATHICS" },
+    { "time": "8:40~8:50", "event": "探討代謝重新編程參與乳癌產生抗藥性之角色", "status": "BIOLOGY" },
+    { "time": "8:50~9:00", "event": "碳為觀止-探討氫氧化鈣在不同離子強度下和二氧化碳反應的關係", "status": "CHEMISTRY" },
+    { "time": "9:00~9:10", "event": "不同刺激物對跳蛛跳躍行為誘導效果之研究", "status": "CHEMISTRY" },
+    { "time": "9:10~9:20", "event": "演算物理：Blender 在物理模擬的實踐", "status": "INFORMATION TECHNOLOGY" },
+    { "time": "9:20~9:30", "event": "鎂的冒泡的鹽水動力車：鎂在鹽酸中的反應方程式及其應用", "status": "CHEMISTRY" },
+    { "time": "9:30~10:10", "event": "靜態展", "status": " " },
+    { "time": "10:10~10:30", "event": "中場休息", "status": " " },
+    { "time": "10:30~10:40", "event": "超音波對阿拉伯芥癒傷組織再生能力之影響", "status": "CHEMISTRY" },
+    { "time": "10:40~10:50", "event": "痕行霸道，還我清白", "status": "CHEMISTRY" },
+    { "time": "10:50~11:00", "event": "真相浮出水面？水柱與光碟片浮沉的關係", "status": "PHYSICS" },
+    { "time": "11:00~11:10", "event": "風過之處 海水低語", "status": "EARTH SCIENCE" },
+    { "time": "11:10~11:20", "event": "巴斯卡三角形到巴斯卡金字塔的推廣", "status": "MATHAMATHICS" },
+    { "time": "11:20~11:30", "event": "「 吾可究藥 」 中藥材鑑別之 DNA 分子技術的開發-以易混淆、誤用之種子藥材的品種判別為例", "status": "BIOLOGY" },
+    { "time": "11:30~11:55", "event": "閉幕式", "status": "CLOSING" }
   ]
 }
