@@ -3,19 +3,18 @@
     {
       "id": 1,
       "title": "數學",
-      "icon": "🎞️",
+      "icon": "1️⃣2️⃣3️⃣",
       "category": "MATHAMATICS",
       "subThemes": [
         
         {
           "id": "1-1",
-          "title": "加密貨幣與高中生理財",
-          "author": "李小華",
-          "shortDesc": "分析青少年對去中心化金融的認知程度。",
-          "description": "本專題透過線上問卷、深度訪談等方式，調查了全台 20 間高中的 1,200 名學生。研究發現 45% 的高中生對加密貨幣有基本認識，但只有 12% 真正理解區塊鏈技術原理。",
+          "title": "巴斯卡三角形到巴斯卡金字塔的推廣",
+          "author": "曾宏祥 劉紹祈",
+          "shortDesc": "short description",
+          "description": "本文主要以巴斯卡三角型為核心，依照其現有的定理、性質、及其對應的二項式定理，推廣到三維的巴斯卡金字塔及三項式定理，同時，對於原有的性質，試著為其找到一種組合性解釋，並推廣至三維",
           "images": [
-            "images/tech-crypto-1.jpg",
-            "images/tech-crypto-2.jpg"
+            "images/20_14.jpg"
           ],
           "highlights": [
             "1,200 名學生樣本",
@@ -28,7 +27,7 @@
     {
       "id": 2,
       "title": "物理",
-      "icon": "🌿",
+      "icon": "⚛",
       "category": "PHYSICS",
       "subThemes": [
         {
@@ -38,9 +37,7 @@
           "shortDesc": "short description",
           "description": "建築安全往往是社會中的問題，我們以pitzer 方程式估計其真實溶解度，並且以氫氧化鈣混入不同溶液的硝酸鈉鹽類並且和二氧化碳接觸不同時間來模擬他的發生，看似不相干的化學品分別對應空氣的三氧化碳和混泥土，我們觀察到離子強度越高其產生的溶解度越大，並使用EUV光譜儀導入試算表來觀察二氧化碳的趨勢，當離子強度高的時候，二氧化碳和鈣離子的反應量亦上升，推廣到現實就是空氣中的二氧化碳和污染物，對於牆壁有裂縫可以使內層接觸二氧化碳的情況下，有著不可不重視的影響性，節能減碳不只可以降低氣溫減少暖化，對居住安全亦然有著意想不到關聯性",
           "images": [
-            "images/ecology-biofuel-1.jpg",
-            "images/ecology-biofuel-2.jpg",
-            "images/ecology-biofuel-3.jpg"
+            "images/7_15_13.jpg"
           ],
           "highlights": [
             "500 公斤廢棄物",
@@ -50,13 +47,13 @@
         },
         {
           "id": "2-2",
-          "title": "垂直農法在都市環境的應用",
-          "author": "林阿寶",
-          "shortDesc": "研究在教室窗邊種植水耕蔬菜的可行性。",
-          "description": "在教室窗邊設置 LED 垂直農場，成功種植番茄、生菜等 8 種蔬菜。結果顯示在台灣冬季日照不足的情況下，透過 LED 補光，蔬菜產量仍可達傳統種植的 85%。",
+          "title": "真相浮出水面？水柱與光碟片浮沉的關係",
+          "author": "詹凱程 朱麗蓉",
+          "shortDesc": "short description",
+          "description": "本研究探討水中的光碟片在水柱沖擊下所造成的水躍現象（Hydraulic jump）與光碟片浮沉的關係。水柱打在光碟片上所產生的水牆高度差會造成光碟片上下壓力差，光碟片就會受到向上的力。水牆高度變小，壓力差也會變小，導致光碟片下沉。本實驗是在探討能使光碟片不沉的情況下，水柱沖擊點與光碟中心最遠距離，如何受水柱流速及水柱粗細的影響。",
           "images": [
-            "images/ecology-farm-1.jpg",
-            "images/ecology-farm-2.jpg"
+            "images/18_24.jpg"
+            
           ],
           "highlights": [
             "8 種蔬菜試種",
@@ -69,18 +66,17 @@
     {
       "id": 3,
       "title": "化學",
-      "icon": "⚖️",
+      "icon": "☢️",
       "category": "CHEMISTRY",
       "subThemes": [
         {
           "id": "3-1",
           "title": "鎂的冒泡的鹽水動力車：鎂在鹽酸中的反應方程式及其應用",
           "author": "王瑋漢 李奕㕡 張瑋宸",
-          "shortDesc": "調查社群媒體使用時間與心理寂寞的關聯。",
-          "description": "本實驗旨在探討活性金屬Mg在酸（HCI）中的反應方程式以求取活化能和反應熱。Mg(s) + 2HCl(aq) → MgCl2(aq) + H2(g)透過酸鹼/EDTA滴定、排水集氣法和秤重等方法來求取各反應物以及生成物的莫耳數比，其中在測量H2（g）體積時，我們使用了與以往不同的方法--使用風管測量，這樣的測量方式更適合用在小體積氣體的測量。藉由實驗結果，還可以討論生成物是否還有其餘價值。",
+          "shortDesc": "short description",
+          "description": "本實驗旨在探討活性金屬Mg在酸（HCl)中的反應方程式:Mg(s) + 2HCl(aq) → MgCl2(aq) + H2(g)透過酸鹼/EDTA滴定、排水集氣法和秤重等方法來求取各反應物以及生成物的莫耳數比，以求得何種方法是最精確的，其中在測量H2(g)體積時，我們使用了與以往不同的方法----使用風管測量，這樣的測量方式更適合用在小體積氣體的測量。藉由實驗結果可以找出適合不同氣體體積的測量方法。",
           "images": [
-            "images/society-loneliness-1.jpg",
-            "images/society-loneliness-2.jpg"
+            "images/1_2.jpg"
           ],
           "highlights": [
             "800 人問卷調查",
@@ -90,14 +86,12 @@
         },
         {
           "id": "3-2",
-          "title": "城市中的無障礙設計",
-          "author": "黃博學",
-          "shortDesc": "實際走訪台中市區評測輪椅族友善程度。",
-          "description": "我們實際訪查了台中市 50 個公共場所，評估其無障礙設施。結果發現只有 28% 的場所完全符合無障礙規範。我們也採訪了 30 位輪椅使用者，了解他們的實際困難。",
+          "title": "痕行霸道，還我清白",
+          "author": "李奕弘 潘顥恩 賴芃宇",
+          "shortDesc": "short description",
+          "description": "由於我們注意到如果家裡的地板是拋光石英磚，很容易會因為拖行金屬器具而導致地板上留下金屬刮痕，且無法用簡單的方法去除，會影響地磚的整體美觀，於是我們為了消除金屬刮痕，決定從市售的金屬刮痕清除劑和一些化學知識來尋找出有效去除金屬刮痕的方法，我們透過改變不同的因素，如金屬種類、不同的酸或鹼作為操作變因來設計實驗，並比較不同的配方對金屬的去除效果，最後結果顯示鎂和鐵的刮痕用弱酸即可輕易消除，而鋁因為是兩性金屬，所以要利用強鹼才能消除，但鈦的刮痕試了各種方法都無法消除，希望在之後能找到最佳配方。",
           "images": [
-            "images/society-access-1.jpg",
-            "images/society-access-2.jpg",
-            "images/society-access-3.jpg"
+            "images/23_21_3.jpg"
           ],
           "highlights": [
             "50 個公共場所評測",
@@ -110,19 +104,18 @@
     {
       "id": 4,
       "title": "生物",
-      "icon": "🧠",
+      "icon": "🧪",
       "category": "BIOLOGY",
       "subThemes": [
         
         {
           "id": "4-1",
           "title": "探討代謝重新編程參與乳癌產生抗藥性之角色",
-          "author": "黃靖容 張茈宸",
+          "author": "黃靖容 張芷宸",
           "shortDesc": "short description",
           "description": "本研究探討脂質代謝在乳癌抗藥性細胞中的角色。我們利用 Nanolive 即時影像系統觀察細胞型態變化，並透過抑制脂肪酸延長酶 (ELOVL6) 分析脂質代謝對細胞代謝調控的影響。結果顯示ADC抗藥性細胞內油滴數量出現變化，且抑制 ELOVL6 後粒線體相關蛋白轉譯後修飾發生變化，但細胞存活實驗顯示 ELOVL6 並非維持細胞生存的關鍵蛋白。此外，我們的結果顯示，在正常葡萄糖環境下細胞仍主要利用葡萄糖作為能量來源。",
           "images": [
-            "images/psychology-dream-1.jpg",
-            "images/psychology-dream-2.jpg"
+            "images/25_30.jpg"
           ],
           "highlights": [
             "90 個夢境記錄",
@@ -136,8 +129,7 @@
           "shortDesc": "short description",
           "description": "隨著科技與工業發展，生活中的環境總是能感受到機械運作所產生的聲學污染，但我們極少關注聽不到的超音波在液體環境中如何影響生物。本研究以阿拉伯芥癒傷組織（Callus）為實驗材料 ，探討在介質中，人為超音波產生的物理震盪和機械壓力如何影響植物細胞的再生能力。本實驗使用 Qsonica Q800R3超音波高精密儀，將癒傷組織置於液體中，在振幅最低強度 20% 及20khz之頻率下進行震盪處理，就像是讓植物細胞在水中接受不同時長的「超音波治療」。結果顯示，實驗發現超音波處理時間與細胞再生表現呈現非線性關係：適度的短時間（1秒）刺激具顯著促進作用；，而長時處理則產生抑制效果。此研究證實，精準控制的液態超音波處理可作為一種促進植物組織培養的新技術。",
           "images": [
-            "images/psychology-dream-1.jpg",
-            "images/psychology-dream-2.jpg"
+            "images/27_29.jpg"
           ],
           "highlights": [
             "90 個夢境記錄",
@@ -151,8 +143,7 @@
           "shortDesc": "short description",
           "description": "本研究經由生物資訊分析比對 rbcL、matK、psbA-trnH 及 ITS 等多處基因片段，發現 ITS2 序列具有作為鑑別韭菜、蔥與其他混淆品之間的潛力，足以作為區分物種之遺傳標記。據此，我針對此序列區段設計了具備物種特異性的 PCR 引子組，可以特異性地擴增目標物種之特異性片段。另外為了提升檢測便利性，本實驗結合側向流體免疫層析法（LFIA），將擴增產物透過抗原抗體呈色原理進行判讀。",
           "images": [
-            "images/psychology-dream-1.jpg",
-            "images/psychology-dream-2.jpg"
+            "images/8.jpg"
           ],
           "highlights": [
             "90 個夢境記錄",
@@ -166,8 +157,7 @@
           "shortDesc": "short description",
           "description": "本專題以跳蛛作為研究對象，探討其對不同誘因的反應以及偏好。研究中的誘因主要分成兩大類：生物性以及非生物性。生物性的包括迷你麵包蟲的幼蟲以及成蟲，而非生物性誘因則是有人工樹葉、紅色玻璃紙、藍色玻璃紙。透過觀察跳蛛對不同刺激物的跳躍反應，進一步分析其偏好及行為模式。",
           "images": [
-            "images/psychology-dream-1.jpg",
-            "images/psychology-dream-2.jpg"
+            "images/4_10.jpg"
           ],
           "highlights": [
             "90 個夢境記錄",
@@ -180,7 +170,7 @@
     {
       "id": 5,
       "title": "地球科學",
-      "icon": "🏺",
+      "icon": "🌍",
       "category": "EARTH_SCIENCE",
       "subThemes": [
         {
@@ -190,9 +180,7 @@
           "shortDesc": "short description",
           "description": "本研究探討颱風對海洋表面降溫的影響，選取2019至2025年太平洋颱風，結合颱風路徑與HYCOM海溫資料，透過Python分析海溫變化。以巴威（2020）、軒嵐諾（2022）與卡努（2023）為案例，探討轉彎特性與降溫分布。結果顯示：海面降溫區多集中於颱風路徑右側；轉彎角度越小，降溫區越快集中於右側，且回溫所需時間較長；降溫區亦會隨颱風路徑移動。",
           "images": [
-            "images/history-3d-1.jpg",
-            "images/history-3d-2.jpg",
-            "images/history-3d-3.jpg"
+            "images/history-3d-1.jpg"
           ],
           "highlights": [
             "5 棟老舊建物掃描",
@@ -205,7 +193,7 @@
     {
       "id": 6,
       "title": "資訊科技",
-      "icon": "🎨",
+      "icon": "💻",
       "category": "INFORMATION TECHNOLOGY",
       "subThemes": [
         {
@@ -215,8 +203,7 @@
           "shortDesc": "short description",
           "description": "由於對數學的熱愛以及寫程式的習慣，我們研究了ECC(橢圓加密演算法)，包含了橢圓曲線方程以及加密，而我們也從ECC去發想了其他的加密演算法，所以我們嘗試研究高階橢圓曲線加密演算法，探討了不同的方程、虧格的多寡對於加密強度的影響，並觀察哪個方法比較好，優缺點各為何。",
           "images": [
-            "images/tech-ai-1.jpg",
-            "images/tech-ai-2.jpg"
+            "images/16_6.jpg"
           ],
           "highlights": [
             "500 位藝術工作者調查",
@@ -230,8 +217,7 @@
           "shortDesc": "short description",
           "description": "Blender是一個涵蓋範圍很廣的軟體，這之中包含了建模及動畫製作等的功能，本專題是在研究軟體的動畫製作、物理模擬及使用幾何節點創造真實物理效果，運用gemini輔助學習。1.在動畫製作部分以關鍵幀為要點，在時間軸上表出時間點，碰過電腦運算各個物品的移動、旋轉及縮放程度。2.而物理模擬部分則是透過物理特性（physic properties)去創造如布料、水流、風等的模擬效果去展示真實世界效果。3.幾何節點的部分則是透過連接方格、手動設置物體的移動，展現出如加速度及反彈的效果。",
           "images": [
-            "images/tech-ai-1.jpg",
-            "images/tech-ai-2.jpg"
+            "images/5.jpg"
           ],
           "highlights": [
             "500 位藝術工作者調查",
@@ -244,7 +230,7 @@
     {
       "id": 7,
       "title": "靜態展",
-      "icon": "🎨",
+      "icon": "🛠️",
       "category": "STATIC SHOWCASE",
       "subThemes": [
         {
@@ -254,9 +240,7 @@
           "shortDesc": "short description",
           "description": "身為一個棒球運動員，打擊練習時常常覺得效率不足，於是我製作了一台自動化拋球式發球機，能夠發射軟、硬式棒球。發球機分為三個部分：一.發球機主體，以高速的無刷馬達搭配橡皮輪藉由與棒球之間的摩擦力將球發射出去；二.自動化送球系統，360度伺服馬達接上轉盤運送，再加上紅外線感測控制棒球的輸送頻率並通知球員球即將送出；三.支撐結構，手工製作木頭支架將發球機主體及自動化控球系統放上並穩固。有了這台發球機，往後站在打擊區上都能夠有最好的發揮。",
           "images": [
-            "images/arts-design-1.jpg",
-            "images/arts-design-2.jpg",
-            "images/arts-design-3.jpg"
+            "images/9.jpg"
           ],
           "highlights": [
             "8 套設計方案",
@@ -271,9 +255,7 @@
           "shortDesc": "short description",
           "description": "透過這次專題，運用了 Arduino製作了一台小型投籃機，再配合按鈕、感測器與馬達等零件，設計出可發射兵乓球進行投籃的酷東西。在功能方面，這台投籃機可透過按鈕啟動遊戲，再利用發射器控制發射角度與力度。也結合了紅外線感測器進行進球加分的判斷！經過三個學期的製作，可以從中學到不少寶貴經驗。除了加強了我對 Arduino的運用之外，也學會了從想法設計到實踐中，排除困難及 加豊富度的能力！！！",
           "images": [
-            "images/arts-design-1.jpg",
-            "images/arts-design-2.jpg",
-            "images/arts-design-3.jpg"
+            "images/12.jpg"
           ],
           "highlights": [
             "8 套設計方案",
@@ -303,9 +285,7 @@
           "shortDesc": "short description",
           "description": "由於小時候常常去湯姆熊打擊台，而且之前在網路上有看到PacMan小遊戲，於是打算結合成一個遊戲機台。遊戲主要使用 Unity 製作遊戲，內容包含角色移動、動畫控制、分數與計時系統、開始與結束畫面以及音效設計。另外機台本身是透過留切機切割木板拼湊而成，並結合 Arduino Leonardo 與搖桿控制器讓整體具有機台操作感。由於機體限制版面沒辦法跟網路上的一樣大，但是仍有闖關的遊戲感，是個消遺時間的好選擇。",
           "images": [
-            "images/arts-design-1.jpg",
-            "images/arts-design-2.jpg",
-            "images/arts-design-3.jpg"
+            "images/19.jpg"
           ],
           "highlights": [
             "8 套設計方案",
@@ -320,9 +300,7 @@
           "shortDesc": "short description",
           "description": "以 GY-ICM20948 九軸感測器為核心，開發虛擬飛鏢系統，整合三軸加速度計、陀螺儀與地磁計，擷取使用者投擲時的動作，利用演算法即時運算模擬飛行軌跡與落點座標，將結果傳至靶盤顯示對應燈效。透過I2C 通訊完成感測資料讀取，進行校準與雜訊處理，提升穩定性與準確度。硬體結構採用3D列印，模擬真實手把。在應用層面上，利用Web Serial API 建立網頁介面，實現即時對戰，透過瀏覺器進行低延遲數據交換，並同步觸發靶盤亮燈特效與動態視覺反饋，數位化解決實體飛鏢損耗問題並提升競技趣味性。",
           "images": [
-            "images/arts-design-1.jpg",
-            "images/arts-design-2.jpg",
-            "images/arts-design-3.jpg"
+            "images/26.jpg"
           ],
           "highlights": [
             "8 套設計方案",
