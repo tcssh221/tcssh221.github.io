@@ -143,7 +143,7 @@ body::after { right: 0; }
 
 .poster-card:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.1);
+  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.08), 0 0 0 1px var(--card-theme-color, var(--accent-red));
 }
 
 .poster-card.clicking {
@@ -165,8 +165,17 @@ body::after { right: 0; }
 
 .poster-info {
   padding: 1.5rem;
-  border-top: 5px solid var(--accent-red);
+  border-top: 5px solid var(--card-theme-color, var(--accent-red));
 }
+
+/* ── 海報卡片各主題顏色 ── */
+.poster-card[data-theme="1"] { --card-theme-color: #1a5fa8; }  /* 數學 - 深藍 */
+.poster-card[data-theme="2"] { --card-theme-color: #7b3fa0; }  /* 物理 - 紫 */
+.poster-card[data-theme="3"] { --card-theme-color: #b30000; }  /* 化學 - 紅 */
+.poster-card[data-theme="4"] { --card-theme-color: #1a7a3c; }  /* 生物 - 綠 */
+.poster-card[data-theme="5"] { --card-theme-color: #b36200; }  /* 地球科學 - 橘褐 */
+.poster-card[data-theme="6"] { --card-theme-color: #0d6b6b; }  /* 資訊科技 - 青 */
+.poster-card[data-theme="7"] { --card-theme-color: #5a3e1b; }  /* 靜態展 - 棕 */
 
 .poster-title {
   font-family: 'Noto Serif TC', serif;
@@ -211,10 +220,19 @@ body::after { right: 0; }
 
 .modal-header {
   padding: 2rem;
-  background: var(--accent-red);
+  background: var(--theme-color, var(--accent-red));
   color: white;
   transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* ── 各主題顏色 ── */
+.modal-content[data-theme="1"] { --theme-color: #1a5fa8; }  /* 數學 - 深藍 */
+.modal-content[data-theme="2"] { --theme-color: #7b3fa0; }  /* 物理 - 紫 */
+.modal-content[data-theme="3"] { --theme-color: #b30000; }  /* 化學 - 紅 */
+.modal-content[data-theme="4"] { --theme-color: #1a7a3c; }  /* 生物 - 綠 */
+.modal-content[data-theme="5"] { --theme-color: #b36200; }  /* 地球科學 - 橘褐 */
+.modal-content[data-theme="6"] { --theme-color: #0d6b6b; }  /* 資訊科技 - 青 */
+.modal-content[data-theme="7"] { --theme-color: #5a3e1b; }  /* 靜態展 - 棕 */
 
 .modal-body { 
   padding: 2rem;
@@ -357,11 +375,12 @@ body::after { right: 0; }
 /* ── 亮點標籤 ── */
 .highlights-section {
   margin: 2rem 0;
+  
 }
 
 .highlights-title {
   font-size: 0.95rem;
-  color: var(--accent);
+  color: var(--theme-color, var(--accent-red));
   margin-bottom: 1rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -374,13 +393,13 @@ body::after { right: 0; }
 }
 
 .highlight-badge {
-  background: rgba(255, 215, 0, 0.1);
-  border: 1px solid var(--accent);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--theme-color, var(--accent-red));
   padding: 0.75rem 1rem;
   border-radius: 4px;
   text-align: center;
   font-size: 0.85rem;
-  color: var(--accent);
+  color: var(--theme-color, var(--accent-red));
 }
 
 .close-btn {

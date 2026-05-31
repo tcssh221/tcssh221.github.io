@@ -77,7 +77,7 @@ function renderThemes() {
   movieGrid.innerHTML = '';
   DATA.themes.forEach(theme => {
     movieGrid.innerHTML += `
-      <div class="poster-card" onclick="handleCardClick(event, ${theme.id})">
+      <div class="poster-card" data-theme="${theme.id}" onclick="handleCardClick(event, ${theme.id})">
         <div class="poster-img">${theme.icon}</div>
         <div class="poster-info">
           <p style="color:var(--muted); font-family:'Space Mono'; font-size:0.7rem">${theme.category}</p>
@@ -103,6 +103,9 @@ function handleCardClick(event, id) {
 function openModal(id, subThemeId = null) {
   const theme = DATA.themes.find(t => t.id === id);
   const mBody = document.getElementById('mBody');
+  
+  // 設定主題顏色
+  document.querySelector('.modal-content').setAttribute('data-theme', id);
 
   const renderContent = () => {
     if (subThemeId !== null) {
@@ -128,7 +131,7 @@ function openModal(id, subThemeId = null) {
       if (subTheme.highlights && subTheme.highlights.length > 0) {
         highlightsHTML = `
           <div class="highlights-section">
-            <div class="highlights-title">✨ 研究亮點</div>
+            <div class="highlights-title">✨ 研究關鍵字</div>
             <div class="highlights-list">
               ${subTheme.highlights.map(h => `<div class="highlight-badge">${h}</div>`).join('')}
             </div>
@@ -142,7 +145,7 @@ function openModal(id, subThemeId = null) {
             <p class="back-link" onclick="openModal(${theme.id})">← 返回主題列表</p>
             <h2 class="sub-detail-title">${subTheme.title}</h2>
             <div class="sub-detail-meta">
-              <span>👤 研究員：${subTheme.author}</span>
+              <span>👤 研究同學：${subTheme.author}</span>
               <span>📂 分類：${theme.title}</span>
             </div>
           </div>
@@ -157,7 +160,7 @@ function openModal(id, subThemeId = null) {
       mBody.innerHTML = theme.subThemes.map(sub => `
         <div class="sub-theme-card" onclick="openModal(${theme.id}, '${sub.id}')">
           <h3 class="sub-theme-card-title">${sub.title}</h3>
-          <p class="sub-theme-card-author">研究員：${sub.author}</p>
+          <p class="sub-theme-card-author">研究同學：${sub.author}</p>
           <p class="sub-theme-card-desc">${sub.shortDesc}</p>
           <p style="color: var(--accent); font-size: 0.75rem; margin-top: 0.8rem;">點擊查看詳細 →</p>
         </div>
